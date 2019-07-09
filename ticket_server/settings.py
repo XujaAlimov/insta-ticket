@@ -40,9 +40,15 @@ INSTALLED_APPS = [
     
     # 3rd party
     'rest_framework',
+    'phonenumber_field',
+    
     
     # my apps
-    'apps.auth',
+    'apps.authentication',
+    'apps.core',
+    'apps.subscription',
+    'apps.events',
+
 ]
 
 MIDDLEWARE = [
@@ -124,3 +130,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+AUTH_USER_MODEL='authentication.User'
+# AUTHENTICATION_BACKENDS = [
+#     'apps.core.authentication_backends.EmailUsernamePhonenumberBackend'
+# ]
